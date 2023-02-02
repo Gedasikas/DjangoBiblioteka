@@ -5,16 +5,16 @@ class KnygosKopijaAdmin(admin.ModelAdmin):
     list_display = ('knyga', 'statusas', 'grazinama')
     list_editable = ('grazinama', 'statusas')
     list_filter = ('statusas', 'grazinama')
-    search_fields = ('id', 'knyga__pavadinimas')
+    search_fields = ('uuid', 'knyga__pavadinimas')
 
     fieldsets = (
-        ('Bendra', {'fields': ('id', 'knyga')}),
+        ('Bendra', {'fields': ('uuid', 'knyga')}),
         ('Prieinamumas', {'fields': ('statusas', 'grazinama')}),
     )
 class KnygosKopijaInline(admin.TabularInline):
     model = KnygosKopija
     extra = 0
-    readonly_fields = ('id',)
+    readonly_fields = ('uuid',)
     can_delete = False
 
 class KnygaAdmin(admin.ModelAdmin):

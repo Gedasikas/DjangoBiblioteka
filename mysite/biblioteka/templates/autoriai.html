@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}<title>Bibliotekos autoriai</title>{% endblock %}
+{% block content %}
+<h1>Bibliotekoje esantys autoriai:</h1>
+<hr>
+{% if autoriai %}
+{% for autorius in autoriai %}
+<li>{{ autorius }}</li>
+{% endfor %}
+{% else %}
+<p>Šiuo metu bibliotekoje neturime nei vieno autoriaus</p>
+{% endif %}
+{% endblock %}

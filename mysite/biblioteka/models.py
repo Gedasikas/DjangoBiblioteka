@@ -34,8 +34,8 @@ class Knyga(models.Model):
         verbose_name_plural = 'Knygos'
 
 class KnygosKopija(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unikalus ID knygos kopijai')
-    knyga = models.ForeignKey('Knyga', on_delete=models.CASCADE, null=True)
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unikalus ID knygos kopijai')
+    knyga = models.ForeignKey('Knyga', on_delete=models.CASCADE, null=True, related_name='knygoskopija')
     grazinama = models.DateField('Bus prieinama', null=True, blank=True)
 
     LOAN_STATUS = (
@@ -54,7 +54,7 @@ class KnygosKopija(models.Model):
     )
 
     def __str__(self):
-        return (f"{self.knyga} {self.id}")
+        return (f"{self.knyga} {self.uuid}")
     class Meta:
         verbose_name = 'Knygos kopija'
         verbose_name_plural = 'Knygos kopijos'

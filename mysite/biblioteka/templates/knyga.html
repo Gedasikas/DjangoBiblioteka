@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}<title>Bibliotekos knyga</title>{% endblock %}
+{% block content %}
+<h1>{{ knyga.pavadinimas }}:</h1>
+<hr>
+<p>Autorius: {{ knyga.autorius }}</p>
+<h4>Kopijos:</h4>
+<hr>
+{% for kopija in knyga.knygoskopija.all %}
+<li>{{ kopija }}</li>
+{% endfor %}
+{% endblock %}
+

@@ -10,8 +10,8 @@
 <h2>Sveiki atvykę!</h2>
 <ul class="sidebar-nav">
     <li><a href="{% url 'pradzia' %}">Pradžia</a></li>
-    <li><a href="">Visos knygos</a></li>
-    <li><a href="">Visi autoriai</a></li>
+    <li><a href="{% url 'knygos' %}">Visos knygos</a></li>
+    <li><a href="{% url 'autoriai' %}">Visi autoriai</a></li>
 </ul>
 {% block content %}{% endblock %}
 </body>

@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<h1>Šiuo metu turime:</h1>
+<hr>
+    <ul>
+        <li>Knygų: {{ knygu_kiekis }}</li>
+        <li>Egzempliorių: {{ knygu_kopiju_kiekis }}</li>
+        <li>Laisvų egzempliorių: {{ prienamu_k_kiekis }}</li>
+        <li>Autorių: {{ autoriu_skaicius }}</li>
+    </ul>
 {% endblock %}
