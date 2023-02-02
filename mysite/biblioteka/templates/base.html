@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    {% block title %}<title>Biblioteka</title>{% endblock %}
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Rajono Biblioteka</h1>
+<h2>Sveiki atvykę!</h2>
+<ul class="sidebar-nav">
+    <li><a href="{% url 'pradzia' %}">Pradžia</a></li>
+    <li><a href="">Visos knygos</a></li>
+    <li><a href="">Visi autoriai</a></li>
+</ul>
+{% block content %}{% endblock %}
+</body>
+</html>
